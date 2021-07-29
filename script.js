@@ -12,3 +12,5 @@ let period = 3;
 
 
 alert('Hello World!');
+
+console.log('Hello Friend!');
