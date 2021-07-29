@@ -9,3 +9,6 @@ let deposit = 25;
 let mission = 100;
 
 let period = 3;
+
+
+alert('Hello World!');
