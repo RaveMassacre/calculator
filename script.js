@@ -1,6 +1,8 @@
+"use strict";
+
 const money = 50000,
   income = 'freelance',
-  addExpenses = 'Internet, Taxi, Communal',
+  addExpenses = `Internet, Taxi, Communal`,
   deposit = true,
   mission = 1000000,
   period = 6,
