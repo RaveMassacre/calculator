@@ -1,13 +1,13 @@
 'use strict';
 
 const income = 'freelance';
-let mission = +prompt(`Ваша цель в рублях: `),
+const mission = +prompt(`Ваша цель в рублях: `),
   money = +prompt(`Ваш месячный доход?`),
   addExpenses = prompt(`Перечислите возможные расходы за рассчитываемый период через запятую`),
   deposit = confirm(`Есть ли у вас депозит в банке?`),
   expenses1 = prompt(`Введите обязательную статью расходов?`),
-  expenses2 = prompt(`Введите обязательную статью расходов?`),
   amount1 = +prompt(`Во сколько это обойдется?`),
+  expenses2 = prompt(`Введите обязательную статью расходов?`),
   amount2 = +prompt(`Во сколько это обойдется?`);
 
 //Задание №4:
@@ -35,10 +35,7 @@ showTypeOf(money);
 showTypeOf(income);
 showTypeOf(deposit);
 
-console.log(`Расходы за месяц: `, getExpensesMonth());
-console.log(`Возможные расходы: `, addExpenses.toLocaleLowerCase().split(', '));
-console.log(`Срок достижения цели: `, getTargetMonth());
-console.log(`Бюджет на день: `, budgetDay);
+
 
 
 const getStatusIncome = function () {
@@ -59,4 +56,8 @@ const getStatusIncome = function () {
   }
 };
 
+console.log(`Расходы за месяц: `, getExpensesMonth());
+console.log(`Возможные расходы: `, addExpenses.toLocaleLowerCase().split(', '));
+console.log(`Срок достижения цели: `, getTargetMonth());
+console.log(`Бюджет на день: `, budgetDay);
 console.log(`Вызов функции getStatusIncome: `, getStatusIncome());
