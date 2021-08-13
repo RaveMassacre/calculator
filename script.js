@@ -13,7 +13,6 @@ let money,
 start();
 
 let appData = {
-  money: +(money),
   income: {},
   addIncome: [],
   expenses: {},
@@ -21,6 +20,7 @@ let appData = {
   deposit: false,
   budgetDay: 0,
   budgetMonth: 0,
+  budget: +money,
   targetMonth: 0,
   expensesMonth: 0,
   period: 7,
@@ -29,8 +29,6 @@ let appData = {
     const addExpenses = prompt(`Перечислите возможные расходы за рассчитываемый период через запятую`);
     appData.addExpenses = addExpenses.split(', ');
     appData.deposit = confirm(`Есть ли у вас депозит в банке?`);
-  },
-  getExpensesMonth: function () {
     let amount, expense;
     for (let i = 0; i < 2; i++) {
       expense = prompt(`Введите обязательную статью расходов?`);
@@ -39,12 +37,14 @@ let appData = {
       } while (!isNumber(amount));
       appData.expenses[expense] = +(amount);
     }
+  },
+  getExpensesMonth: function () {
     for (let key in appData.expenses) {
       appData.expensesMonth += appData.expenses[key];
     }
   },
   getBudget: function () {
-    appData.budgetMonth = appData.money - appData.expensesMonth;
+    appData.budgetMonth = appData.budget - appData.expensesMonth;
     appData.budgetDay = Math.floor(appData.budgetMonth / 30);
   },
   getTargetMonth: function () {
