@@ -118,7 +118,7 @@ appData.calcSavedMoney();
 
 console.log(`Расходы за месяц: ` + appData.expensesMonth);
 console.log(appData.getStatusIncome());
-console.log('2) ' + appData.addExpenses.map((val, i) => val[0].toUpperCase() + val.slice(1)).join(', '));
+console.log(appData.addExpenses.map((val, i) => val[0].toUpperCase() + val.slice(1)).join(', '));
 
 for (let key in appData) {
   console.log(`Наша программа включает в себя данные: ` + key + ` - ` + appData[key]);
