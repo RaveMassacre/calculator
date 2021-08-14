@@ -8,16 +8,16 @@ const doString = function (str, comma = false) {
   return pattern.test(str);
 }; //Валидация строки
 
-let money,
-  start = function () {
-    do {
-      money = prompt(`Ваш месячный доход?`);
-    } while (!isNumber(money));
+let money;
+const start = function () {
+  do {
+    money = prompt(`Ваш месячный доход?`, 60000);
+  } while (!isNumber(money));
 
-  };
+};
 start();
 
-let appData = {
+const appData = {
   income: {},
   addIncome: [],
   expenses: {},
@@ -38,7 +38,7 @@ let appData = {
       let itemIncome = ` `;
       do {
         itemIncome = prompt(`Какой у вас дополнительный заработок?`, `Таксую`);
-      } while (!doString(itemIncome));
+      } while (isNumber(itemIncome));
       let cashIncome = 0;
       do {
         cashIncome = +prompt(`Сколько зарабатываете на этом в месяц?`, 10000);
@@ -50,7 +50,9 @@ let appData = {
     appData.deposit = confirm(`Есть ли у вас депозит в банке?`);
     let amount, expense;
     for (let i = 0; i < 2; i++) {
-      expense = prompt(`Введите обязательную статью расходов?`, `Еда, интернет`);
+      do {
+        expense = prompt(`Введите обязательную статью расходов?`, `Еда, интернет`);
+      } while (isNumber(expense));
       do {
         amount = prompt(`Во сколько это обойдется?`, 4000);
       } while (!isNumber(amount));
