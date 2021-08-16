@@ -29,7 +29,7 @@ console.log(`Возможные доходы: `, possibleIncome);
 const possibleCosts = document.getElementsByClassName(`additional_expenses-value`); //Возможные расходы
 console.log(`Возможные расходы: `, possibleCosts);
 
-const accumulation = document.getElementsByClassName(`income_period - value`); //Накопления за период
+const accumulation = document.getElementsByClassName(`income_period-value`); //Накопления за период
 console.log(`Накопления за период `, accumulation);
 
 const successDate = document.getElementsByClassName(`target_month-value`); //Срок достижения цели
