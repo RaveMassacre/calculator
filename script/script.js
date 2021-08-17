@@ -18,22 +18,22 @@ const inputFields = document.querySelectorAll(`.additional_income-item`); //По
 console.log(`Поля ввода возможных доходов: `, inputFields);
 
 const dayBudget = document.getElementsByClassName(`budget_day-value`); //Вывод дохода за день
-console.log(`Вывод дохода за день: `, dayBudget);
+console.log(`Вывод дохода за день: `, dayBudget[0]);
 
 const costsMonth = document.getElementsByClassName(`expenses_month-value`); //Вывод расходов за месяц
-console.log(`Вывод расходов за месяц: `, costsMonth);
+console.log(`Вывод расходов за месяц: `, costsMonth[0]);
 
 const possibleIncome = document.getElementsByClassName(`additional_income-value`); //Возможные доходы
-console.log(`Возможные доходы: `, possibleIncome);
+console.log(`Возможные доходы: `, possibleIncome[0]);
 
 const possibleCosts = document.getElementsByClassName(`additional_expenses-value`); //Возможные расходы
-console.log(`Возможные расходы: `, possibleCosts);
+console.log(`Возможные расходы: `, possibleCosts[0]);
 
 const accumulation = document.getElementsByClassName(`income_period-value`); //Накопления за период
-console.log(`Накопления за период `, accumulation);
+console.log(`Накопления за период `, accumulation[0]);
 
 const successDate = document.getElementsByClassName(`target_month-value`); //Срок достижения цели
-console.log(`Срок достижения цели: `, successDate);
+console.log(`Срок достижения цели: `, successDate[0]);
 
 const salaryAmount = document.querySelector(`.salary-amount`); //Вывод месячный доход
 console.log(`Ввод месячного дохода: `, salaryAmount);
@@ -41,6 +41,14 @@ console.log(`Ввод месячного дохода: `, salaryAmount);
 const incomeItems = document.querySelector(`.income-items`);//Дополнительный доход
 console.log(`Наименование доп. дохода: `, incomeItems.children[0]);
 console.log(`Сумма доп. дохода: `, incomeItems.children[1]);
+
+const additionalIncome = document.querySelector(`.additional_income`);
+console.log(`Возможный доход, ввод: `, additionalIncome.children[1]);
+console.log(`Возможный доход, ввод: `, additionalIncome.children[2]);
+
+const expensesItems = document.querySelector(`.expenses-items`);
+console.log(`Наименование обязательного расхода: `, expensesItems.children[0]);
+console.log(`Сумма обязательного расхода: `, expensesItems.children[1]);
 
 const additionalExpensesItem = document.querySelector(`.additional_expenses-item`);//Возможные расходы
 console.log(`Возможные расходы: `, additionalExpensesItem);
