@@ -193,4 +193,3 @@ start.addEventListener(`click`, appData.start);
 addButtonSecond.addEventListener(`click`, appData.addExpensesBlock);
 addButtonFirst.addEventListener(`click`, appData.addIncomeBlock);
 periodSelect.addEventListener(`input`, appData.changePeriod);
-salaryAmount.addEventListener(`input`, appData.bannedStart);
