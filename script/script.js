@@ -76,8 +76,12 @@ const appData = {
   },
   addExpensesBlock: function () {
     let cloneExpensesItem = expensesItems[0].cloneNode(true);
-    expensesItems[0].parentNode.insertBefore(cloneExpensesItem, addButtonSecond);
-    expensesItems = document.querySelectorAll('.expenses-items');
+    const clone = expensesItems[0].parentNode.insertBefore(cloneExpensesItem, addButtonSecond);
+    expensesItems = document.querySelectorAll(`.expenses-items`);
+    for (let i = 0; i <= expensesItems.length; i++) {
+      clone.querySelector(`.expenses-title`).value = ``;
+      clone.querySelector(`.expenses-amount`).value = ``;
+    }
     if (expensesItems.length === 3) {
       addButtonSecond.style.display = `none`;
     }
@@ -102,8 +106,12 @@ const appData = {
   },
   addIncomeBlock: function () {
     let cloneIncomeItem = incomeItems[0].cloneNode(true);
-    incomeItems[0].parentNode.insertBefore(cloneIncomeItem, addButtonFirst);
+    const clone = incomeItems[0].parentNode.insertBefore(cloneIncomeItem, addButtonFirst);
     incomeItems = document.querySelectorAll('.income-items');
+    for (let i = 0; i <= incomeItems.length; i++) {
+      clone.querySelector(`.income-title`).value = ``;
+      clone.querySelector(`.income-amount`).value = ``;
+    }
     if (incomeItems.length === 3) {
       addButtonFirst.style.display = `none`;
     }
@@ -178,18 +186,14 @@ const appData = {
     document.querySelector(`.period-amount`).textContent = event.target.value;
     incomePeriodValue.value = appData.calcSavedMoney();
   },
-};
-document.querySelector(`.calc`).addEventListener(`mouseover`, function () {
-  if (salaryAmount.value === '') {
-    start.setAttribute(`disabled`, ``);
-    start.style.backgroundColor = `#c5c8cd`;
-  } else {
-    start.removeAttribute(`disabled`);
-    start.style.backgroundColor = `#353a43`;
+  bannedStart: function () {
+    start.disabled = !salaryAmount.value.trim();
   }
-});
+};
 
+appData.bannedStart();
 start.addEventListener(`click`, appData.start);
 addButtonSecond.addEventListener(`click`, appData.addExpensesBlock);
 addButtonFirst.addEventListener(`click`, appData.addIncomeBlock);
 periodSelect.addEventListener(`input`, appData.changePeriod);
+salaryAmount.addEventListener(`input`, appData.bannedStart);
